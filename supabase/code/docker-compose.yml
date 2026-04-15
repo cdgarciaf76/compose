@@ -77,6 +77,7 @@ services:
       analytics:
         condition: service_healthy
     environment:
+      SUPABASE_PUBLIC_URL: "https://database.mercaradar.com"
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /home/kong/kong.yml
       # https://github.com/supabase/cli/issues/14
@@ -157,6 +158,8 @@ services:
       GOTRUE_EXTERNAL_PHONE_ENABLED: ${ENABLE_PHONE_SIGNUP}
       GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
       # Uncomment to enable OAuth / social login providers.
+      GOTRUE_SITE_URL: "https://database.mercaradar.com"
+      GOTRUE_URI_ALLOW_LIST: "https://database.mercaradar.com,https://google.com"
       GOTRUE_EXTERNAL_GOOGLE_ENABLED: "true"
       GOTRUE_EXTERNAL_GOOGLE_CLIENT_ID: "1028308591256-igojhlb2i980dlkot42fd3liju0vtnng.apps.googleusercontent.com"
       GOTRUE_EXTERNAL_GOOGLE_SECRET: ${GOTRUE_EXTERNAL_GOOGLE_SECRET}
